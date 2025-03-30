@@ -24,7 +24,7 @@ export default function BuyPage() {
     try {
       await withdrawUSDT(amount);
       alert(`You have withdrawn: ${amount}`);
-    } catch (err) {}
+    } catch {}
   };
 
   const handleDraw = async () => {
@@ -35,7 +35,7 @@ export default function BuyPage() {
     try {
       await drawLottery(drawId);
       alert("lottery drawn");
-    } catch (err) {}
+    } catch {}
   };
 
   const handleCreateLottery = async () => {
@@ -46,7 +46,7 @@ export default function BuyPage() {
     try {
       await createLottery(prize, entryFee);
       alert(`Lottery created with prize: ${prize}`);
-    } catch (err) {}
+    } catch {}
   };
 
   return (

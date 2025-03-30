@@ -16,9 +16,11 @@ export default function BuyPage() {
       alert("Please enter a valid number");
       return;
     }
-    await approveUSDT(amount);
-    await buyTokens(amount);
-    alert(`You have bought ${amount} tokens`);
+    try {
+      await approveUSDT(amount);
+      await buyTokens(amount);
+      alert(`You have bought ${amount} tokens`);
+    } catch {}
   };
 
   const handleEntry = async () => {

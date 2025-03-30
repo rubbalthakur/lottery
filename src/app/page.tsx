@@ -25,9 +25,7 @@ export default function Home() {
       await enterLottery(id, entryFee);
 
       alert("Successfully entered the lottery!");
-    } catch (error) {
-      console.error("Error during handleEntry:", error);
-    }
+    } catch {}
   };
 
   useEffect(() => {

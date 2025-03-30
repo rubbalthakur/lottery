@@ -401,7 +401,7 @@ export const withdrawUSDT = async (amount) => {
 
     console.log("USDT Withdrawn!");
   } catch (error) {
-    alert("Withdrawl Failed");
+    alert("Withdrawl Failed", error);
     console.error("Withdrawl Failed", error);
     throw new Error("Transaction failed");
   }
