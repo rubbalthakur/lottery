@@ -56,7 +56,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/LotteryEntries">Lottery Entries</Link>
+                <Link href="/View">Lottery Entries</Link>
               </li>
             </ul>
           </nav>
