@@ -26,7 +26,10 @@ export default function BuyPage() {
       alert("Please enter valid lottery ID and entry amount");
       return;
     }
-    await enterLottery(lotteryId, entry);
+    try {
+      await enterLottery(lotteryId, entry);
+      alert("Entry successful");
+    } catch {}
   };
 
   return (

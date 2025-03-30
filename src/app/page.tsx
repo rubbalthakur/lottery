@@ -24,7 +24,7 @@ export default function Home() {
     try {
       await enterLottery(id, entryFee);
 
-      console.log("Successfully entered the lottery!");
+      alert("Successfully entered the lottery!");
     } catch (error) {
       console.error("Error during handleEntry:", error);
     }

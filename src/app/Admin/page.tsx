@@ -17,14 +17,25 @@ export default function BuyPage() {
   const [drawId, setDrawId] = useState("");
 
   const handleWithdraw = async () => {
-    if (!amount) return;
-    await withdrawUSDT(amount);
-    alert(`You have withdrawn: ${amount}`);
+    if (!amount) {
+      alert("please enter amount");
+      return;
+    }
+    try {
+      await withdrawUSDT(amount);
+      alert(`You have withdrawn: ${amount}`);
+    } catch (err) {}
   };
 
   const handleDraw = async () => {
-    if (!drawId) return;
-    await drawLottery(drawId);
+    if (!drawId) {
+      alert("please enter id");
+      return;
+    }
+    try {
+      await drawLottery(drawId);
+      alert("lottery drawn");
+    } catch (err) {}
   };
 
   const handleCreateLottery = async () => {
@@ -32,8 +43,10 @@ export default function BuyPage() {
       alert("Please enter a valid lottery prize amount");
       return;
     }
-    await createLottery(prize, entryFee);
-    alert(`Lottery created with prize: ${prize}`);
+    try {
+      await createLottery(prize, entryFee);
+      alert(`Lottery created with prize: ${prize}`);
+    } catch (err) {}
   };
 
   return (

@@ -224,8 +224,9 @@ export const getProvider = () => {
 export const getUSDTContract = async () => {
   const provider = getProvider();
   if (!provider) {
+    alert("No provider found. Please connect MetaMask.");
     console.error("No provider found. Please connect MetaMask.");
-    return null;
+    throw new Error("metamask not detected");
   }
 
   const signer = await provider.getSigner();
@@ -258,7 +259,9 @@ export const approveUSDT = async (amount) => {
 
     console.log("Approval successful!");
   } catch (error) {
+    alert("approval failed");
     console.error("Approval failed:", error);
+    throw new Error("approval failed");
   }
 };
 
@@ -270,7 +273,7 @@ export const buyTokens = async (amount) => {
       return;
     }
 
-    const myTokenContract = await getMyTokenContract(); // Now it uses a signer
+    const myTokenContract = await getMyTokenContract();
     if (!myTokenContract) return;
 
     const tx = await myTokenContract.buyTokens(amount);
@@ -278,7 +281,9 @@ export const buyTokens = async (amount) => {
 
     console.log("Tokens purchased successfully!");
   } catch (error) {
+    alert("Token purchase failed:");
     console.error("Token purchase failed:", error);
+    throw new Error("Transaction failed");
   }
 };
 
@@ -299,7 +304,9 @@ export const approveMyToken = async (amount) => {
 
     console.log("Approval successful!");
   } catch (error) {
+    alert("Approval failed:");
     console.error("Approval failed:", error);
+    throw new Error("Transaction failed");
   }
 };
 
@@ -321,7 +328,9 @@ export const createLottery = async (prize, entryFee) => {
 
     console.log("Lottery Created!");
   } catch (error) {
+    alert("lottery creation failed:");
     console.error("lottery creation failed:", error);
+    throw new Error("Transaction failed");
   }
 };
 
@@ -342,7 +351,9 @@ export const enterLottery = async (lotteryId, entry) => {
 
     console.log("Entered in Lottery!");
   } catch (error) {
-    console.error("lottery creation failed:", error);
+    alert("lottery entry failed:");
+    console.error("lottery entry failed:", error);
+    throw new Error("Transaction failed");
   }
 };
 
@@ -362,7 +373,9 @@ export const drawLottery = async (lotteryId) => {
 
     console.log("Lottery Drawn!");
   } catch (error) {
-    console.error("lottery creation failed:", error);
+    alert("Pick Winner failed:");
+    console.error("Pick winner failed:", error);
+    throw new Error("Transaction failed");
   }
 };
 
@@ -388,6 +401,8 @@ export const withdrawUSDT = async (amount) => {
 
     console.log("USDT Withdrawn!");
   } catch (error) {
+    alert("Withdrawl Failed");
     console.error("Withdrawl Failed", error);
+    throw new Error("Transaction failed");
   }
 };
