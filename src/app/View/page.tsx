@@ -55,7 +55,7 @@ export default function LotteryEntries() {
                 <Link href="/Winners">Winners</Link>
               </li>
               <li>
-                <Link href="/LotteryEntries" className="active">
+                <Link href="/View" className="active">
                   Lottery Entries
                 </Link>
               </li>
