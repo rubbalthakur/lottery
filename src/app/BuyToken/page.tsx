@@ -4,17 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaSearch, FaUser } from "react-icons/fa";
-import {
-  enterLottery,
-  buyTokens,
-  createLottery,
-  approveUSDT,
-} from "../../app/utils/contract";
+import { enterLottery, buyTokens, approveUSDT } from "../../app/utils/contract";
 
 export default function BuyPage() {
   const [amount, setAmount] = useState("");
-  const [prize, setPrize] = useState("");
-  const [entryFee, setEntryFee] = useState("");
   const [lotteryId, setLotteryId] = useState("");
   const [entry, setEntry] = useState("");
 
@@ -26,15 +19,6 @@ export default function BuyPage() {
     await approveUSDT(amount);
     await buyTokens(amount);
     alert(`You have bought ${amount} tokens`);
-  };
-
-  const handleCreateLottery = async () => {
-    if (!prize || isNaN(Number(prize)) || Number(prize) <= 0) {
-      alert("Please enter a valid lottery prize amount");
-      return;
-    }
-    await createLottery(prize, entryFee);
-    alert(`Lottery created with prize: ${prize}`);
   };
 
   const handleEntry = async () => {
@@ -112,21 +96,6 @@ export default function BuyPage() {
           {/* <button onClick={handleApproval}>Approve USDT</button> */}
           <button onClick={handleBuy}>Buy Tokens</button>
         </div>
-
-        <h1>Lottery Creation</h1>
-        <input
-          type="number"
-          placeholder="Enter amount"
-          value={prize}
-          onChange={(e) => setPrize(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Set Entry Fee"
-          value={entryFee}
-          onChange={(e) => setEntryFee(e.target.value)}
-        />
-        <button onClick={handleCreateLottery}>Create Lottery</button>
 
         <h1>Enter Lottery</h1>
         <input
