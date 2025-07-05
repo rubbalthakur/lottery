@@ -7,7 +7,7 @@ interface Lottery {
 }
 import Link from "next/link";
 import Image from "next/image";
-import { FaSearch, FaUser } from "react-icons/fa";
+// import { FaSearch, FaUser } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { fetchWinnerDrawn } from "../../app/utils/contract";
 

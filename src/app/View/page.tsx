@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchLotteryEntries, getProvider } from "../../app/utils/contract";
+import { fetchLotteryEntries } from "../../app/utils/contract";
 import Link from "next/link";
 import Image from "next/image";
-import { FaSearch, FaUser } from "react-icons/fa";
+// import { FaSearch, FaUser } from "react-icons/fa";
 
 interface LotteryEntry {
   lotteryId: number;

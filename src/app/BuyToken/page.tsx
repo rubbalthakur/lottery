@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaSearch, FaUser } from "react-icons/fa";
+// import { FaSearch, FaUser } from "react-icons/fa";
 import { enterLottery, buyTokens, approveUSDT } from "../../app/utils/contract";
 
 export default function BuyPage() {
