@@ -85,19 +85,19 @@ export default function BuyPage() {
             </ul>
           </nav>
           <div className="header-right flex items-center space-x-4">
-            <div className="search-icon text-xl cursor-pointer">
+            {/* <div className="search-icon text-xl cursor-pointer">
               <FaSearch />
             </div>
             <div className="user-icon text-xl cursor-pointer">
               <FaUser />
-            </div>
+            </div> */}
             <div className="sign-buttons flex space-x-2">
-              <Link
+              {/* <Link
                 href="/signin"
                 className="sign-in bg-blue-500 text-white px-4 py-2 rounded"
               >
                 Connect wallet
-              </Link>
+              </Link> */}
               {/* <Link href="/signup" className="sign-up bg-green-500 text-white px-4 py-2 rounded">Sign Up</Link> */}
             </div>
           </div>

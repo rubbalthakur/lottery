@@ -17,7 +17,6 @@ export default function LotteryEntries() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProvider();
     const loadEntries = async () => {
       const data = await fetchLotteryEntries();
       setEntries(data);
@@ -62,19 +61,19 @@ export default function LotteryEntries() {
             </ul>
           </nav>
           <div className="header-right flex items-center space-x-4">
-            <div className="search-icon text-xl cursor-pointer">
+            {/* <div className="search-icon text-xl cursor-pointer">
               <FaSearch />
             </div>
             <div className="user-icon text-xl cursor-pointer">
               <FaUser />
-            </div>
+            </div> */}
             <div className="sign-buttons flex space-x-2">
-              <Link
+              {/* <Link
                 href="/signin"
                 className="sign-in bg-blue-500 text-white px-4 py-2 rounded"
               >
                 Connect wallet
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

@@ -28,8 +28,13 @@ export default function Home() {
     } catch {}
   };
 
-  useEffect(() => {
+  const handleConnectWallet = () => {
     getProvider();
+  };
+
+  useEffect(() => {
+    const a = getProvider();
+    console.log(a);
     const loadLotteries = async () => {
       const data = await fetchActiveLotteries();
       console.log("Data", data);
@@ -75,19 +80,20 @@ export default function Home() {
             </ul>
           </nav>
           <div className="header-right flex items-center space-x-4">
-            <div className="search-icon text-xl cursor-pointer">
+            {/* <div className="search-icon text-xl cursor-pointer">
               <FaSearch />
             </div>
             <div className="user-icon text-xl cursor-pointer">
               <FaUser />
-            </div>
+            </div> */}
             <div className="sign-buttons flex space-x-2">
-              <Link
-                href="/signin"
+              <button
+                // href="/signin"
                 className="sign-in bg-blue-500 text-white px-4 py-2 rounded"
+                onClick={handleConnectWallet}
               >
                 Connect wallet
-              </Link>
+              </button>
               {/* <Link href="/signup" className="sign-up bg-green-500 text-white px-4 py-2 rounded">Sign Up</Link> */}
             </div>
           </div>

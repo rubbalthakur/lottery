@@ -216,7 +216,6 @@ export const getProvider = () => {
   } else {
     alert("MetaMask not detected! Please install metamask");
     console.error("MetaMask not detected!");
-    throw new Error("metamask not detected");
   }
 };
 
